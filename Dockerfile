@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-RUN apk add --no-cache git ca-certificates openssl-dev
+RUN apk add --no-cache git ca-certificates openssl-dev postgresql-client bash nano
 
 RUN mkdir -p /go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
 WORKDIR /go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market

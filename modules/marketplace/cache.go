@@ -17,7 +17,7 @@ var (
 	cache1h  = gcache.New(10240).LRU().Expiration(d1h).Build()
 
 	redisClient = redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
+		Addr:     "redis:6379",
 		Password: "", // no password set
 		DB:       0,  // use default DB
 	})
