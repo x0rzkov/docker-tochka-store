@@ -1,5 +1,0 @@
-mixin storeCard($seller, $localization)
-  import ./mixin_store_card
-  style div.user.info .card { width: 100% !important }
-  div.user.info
-    +storeCard($seller, $localization)
