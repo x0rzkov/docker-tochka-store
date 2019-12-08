@@ -9,7 +9,7 @@ syncs:
   #REFERENCE: https://github.com/EugenMayer/docker-sync/blob/master/example/docker-sync.yml#L32 
   app:
     notify_terminal: false
-    src: ${PWD}/htdocs # host source directory
+    src: ${PWD} # host source directory
     sync_strategy: 'native_osx' # for osx use 'native_osx', for windows use 'unison'
     # watch_strategy: 'fswatch'
     sync_userid: 1000 # giving permissions to www-data user (as defined in nginx and php-fpm Dockerfiles)
@@ -17,6 +17,8 @@ syncs:
     - "-prefer newer"
     - "-ignore='Path .git'"
     - "-ignore='BelowPath .git'"
+    - "-ignore='Path node_modules'"
+    - "-ignore='BelowPath node_modules'"
     sync_excludes: [ '.DS_Store', '.git', '.idea', 'node_modules' ]
     # sync_excludes: ['signored_folder_example'] # ignored directories    
     # this is only available if you use docker-for-mac edge for now
