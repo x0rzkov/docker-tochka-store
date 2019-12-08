@@ -39,8 +39,10 @@ services:
     - "80:80"
     depends_on:
     - db
+    - redis
     links:
     - db
+    - redis
     # volumes:
     # - app_data:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
     command: ["./scripts/run.sh"]
@@ -55,6 +57,11 @@ services:
     # - 5432
     ports:
     - 5432:5432
+
+  redis:
+    image: wodby/redis:5-3.0.3
+    ports:
+    - "6379:6379"
 
 volumes:
   app_data:
