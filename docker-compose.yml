@@ -31,9 +31,9 @@ services:
         -----END RSA PRIVATE KEY-----
 
   app:
-    image: tocka:alpine3.10-go1.13
+    image: tochka-free-market:alpine3.10-go1.13
     build:
-      context: .
+      context: ./tochka-free-market
       dockerfile: Dockerfile
     ports:
     - "80:80"
@@ -43,6 +43,21 @@ services:
     links:
     - db
     - redis
+    # volumes:
+    # - app_data:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
+    command: ["./scripts/run.sh"]
+
+  gate:
+    image: payaka-payment-gate:alpine3.10-go1.13
+    build:
+      context: ./payaka-payment-gate
+      dockerfile: Dockerfile
+    ports:
+    - "8083:8083"
+    depends_on:
+    - app
+    links:
+    - app
     # volumes:
     # - app_data:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
     command: ["./scripts/run.sh"]
@@ -57,6 +72,8 @@ services:
     # - 5432
     ports:
     - 5432:5432
+    volumes:
+    - db_data:/
 
   redis:
     image: wodby/redis:5-3.0.3
@@ -64,6 +81,7 @@ services:
     - "6379:6379"
 
 volumes:
+  db_data:
   app_data:
     external: true
 

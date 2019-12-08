@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-RUN apk add --no-cache git ca-certificates openssl-dev
+RUN apk add --no-cache git ca-certificates openssl-dev nano bash
 
 RUN mkdir -p /go/src/qxklmrhx7qkzais6.onion/Tochka/payaka-payment-gate
 WORKDIR /go/src/qxklmrhx7qkzais6.onion/Tochka/payaka-payment-gate
@@ -13,4 +13,4 @@ RUN chmod a+x ./scripts/build.sh && \
 
 EXPOSE 8083
 
-CMD ["/go/src/qxklmrhx7qkzais6.onion/Tochka/payaka-payment-gate/scripts/run.sh"]
+CMD ["/bin/bash"]
