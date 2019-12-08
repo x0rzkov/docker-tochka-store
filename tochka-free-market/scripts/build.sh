@@ -11,7 +11,4 @@ go get -u github.com/gocraft/web
 go get -u github.com/go-redis/redis
 
 go build
-
 cp settings.json.example settings.json
-
-ls -l

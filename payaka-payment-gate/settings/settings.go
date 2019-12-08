@@ -49,7 +49,7 @@ func LoadPaymentGateSettings() PaymentGateSettings {
 
 var (
 	APPLICATION_SETTINGS = AppSettings{
-		Host:  "127.0.0.1",
+		Host:  "0.0.0.0",
 		Port:  8083,
 		Debug: os.Getenv("PAYAKA_DEBUG") == "1",
 	}
