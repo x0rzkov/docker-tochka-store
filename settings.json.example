@@ -26,7 +26,7 @@
 
 	"siteurl": "",
 	"sitename": "Tochka Free Market",
-	"postgres_connection_string": "host=localhost user=postgres dbname=go_t sslmode=disable password=",
+	"postgres_connection_string": "host=db user=postgres dbname=go_t sslmode=disable password=",
 	"cookie_encryption_salt": "",
 	"csrf_encryption": "",
 	"insured_categories": [105, 114, 30],

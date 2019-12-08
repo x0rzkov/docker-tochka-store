@@ -2,3 +2,5 @@
 .git/
 .git/*
 .git/**
+docker-compose.yml
+Dockerfile
