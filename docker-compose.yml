@@ -3,17 +3,15 @@ version: '3.7'
 services:
 
   tor:
-    image: goldy/tor-hidden-service
+    image: goldy/tor-hidden-service:latest
     links:
     - app
-    depends_on:
-    - app
-    # volumes:
-    #- ./tor_keys:/var/lib/tor/hidden_service/
+    volumes:
+    - ./tor_keys:/var/lib/tor/hidden_service/
     environment:
       # PROXY_MAP: 8081:8081 # first port is exposed port and the second one is service internal port.
       # Set mapping ports
-      SERVICE_TOR_SERVICE_HOSTS: 80:app:8081
+      SERVICE_TOR_SERVICE_HOSTS: 80:app:80
       # Set private key
       SERVICE_TOR_SERVICE_KEY: |
         -----BEGIN RSA PRIVATE KEY-----
@@ -37,15 +35,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # command: ["./scripts/wait-for-it.sh", "db:5432", "--", "go", "run", "main.go"]
-    volumes:
-    - .:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
     ports:
-    - "8081:8081"
+    - "80:80"
     depends_on:
     - db
     links:
     - db
+    # volumes:
+    # - app_data:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
     command: ["./scripts/run.sh"]
 
   db:
@@ -54,8 +51,15 @@ services:
       POSTGRES_DB: go_t
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 
-    expose:
-    - 5432
+    # expose:
+    # - 5432
     ports:
     - 5432:5432
 
+volumes:
+  app_data:
+    external: true
+
+# networks:
+#   web:
+#     external: true

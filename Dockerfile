@@ -11,4 +11,6 @@ RUN chmod a+x ./scripts/build.sh && \
 	chmod a+x ./scripts/run.sh && \
 	/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market/scripts/build.sh
 
+EXPOSE 80 8081
+
 CMD ["/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market/scripts/run.sh"]

@@ -1,1 +1,11 @@
 ./tochka-free-market
+settings.json
+.idea/
+.#*
+\#*\#
+*~
+data/index.bleve/
+data/images/
+data/dump/
+tochka-free-market
+# .gitignore

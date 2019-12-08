@@ -16,4 +16,5 @@ ls -l
 # TODO: create admin user
 # TODO: setup settings.json
 
+cat /etc/hosts
 ./tochka-free-market server
