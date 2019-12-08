@@ -7,5 +7,5 @@ settings.json
 data/index.bleve/
 data/images/
 data/dump/
-tochka-free-market
+./tochka-free-market
 # .gitignore
