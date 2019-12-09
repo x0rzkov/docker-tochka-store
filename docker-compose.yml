@@ -74,7 +74,7 @@ services:
     ports:
     - 5432:5432
     volumes:
-    - db_data:/
+    - db_data:/var/lib/postgresql/data
 
   redis:
     image: wodby/redis:5-3.0.3
