@@ -3,7 +3,10 @@
 set -x
 set -e
 
-go build
-cp settings.json.example settings.json
+go get github.com/Masterminds/glide
 
-ls -l
+# cat glide.yaml
+# glide install --strip-vendor
+
+# go build
+# cp settings.json.example settings.json

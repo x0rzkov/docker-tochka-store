@@ -1,0 +1,36 @@
+ignore:
+-  qxklmrhx7qkzais6.onion
+import:
+- package: github.com/ethereum/go-ethereum
+  subpackages:
+  - accounts/abi
+  - accounts/abi/bind
+  - common
+  - core/types
+  - crypto
+  - ethclient
+  - event
+- package: github.com/gocraft/web
+- package: github.com/helloyi/go-waitgroup
+- package: github.com/jinzhu/gorm
+  subpackages:
+  - dialects/postgres
+- package: github.com/onrik/ethrpc
+- package: github.com/vsergeev/btckeygenie
+  subpackages:
+  - btckey
+- package: go.uber.org/ratelimit
+- package: golang.org/x/net
+  subpackages:
+  - proxy
+- package: code.google.com/p/go.crypto
+  vcs: git
+  repo: https://github.com/golang/crypto.git
+- package: github.com/cespare/xxhash
+  version: v2
+- package: github.com/ethereum/go-ethereum
+  subpackages:
+  - accounts/abi
+  - accounts/abi/bind
+  - common
+  - core/types

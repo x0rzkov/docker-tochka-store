@@ -47,20 +47,21 @@ services:
     # - app_data:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
     command: ["./scripts/run.sh"]
 
-  gate:
-    image: payaka-payment-gate:alpine3.10-go1.13
-    build:
-      context: ./payaka-payment-gate
-      dockerfile: Dockerfile
-    ports:
-    - "8083:8083"
-    depends_on:
-    - app
-    links:
-    - app
+  # problem with vendoring 
+  # gate:
+  #   image: payaka-payment-gate:alpine3.10-go1.13
+  #   build:
+  #     context: ./payaka-payment-gate
+  #     dockerfile: Dockerfile
+  #   ports:
+  #   - "8083:8083"
+  #   depends_on:
+  #   - app
+  #   links:
+  #   - app
     # volumes:
     # - app_data:/go/src/qxklmrhx7qkzais6.onion/Tochka/tochka-free-market
-    command: ["./scripts/run.sh"]
+  #   command: ["./scripts/run.sh"]
 
   db:
     image: postgres:11
